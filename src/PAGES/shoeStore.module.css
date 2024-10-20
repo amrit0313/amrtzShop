@@ -24,3 +24,42 @@
   font-weight: bolder;
   color: gray;
 }
+
+.options {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.options button {
+  padding: 10px 50px;
+  height: fit-content;
+  border-radius: 20px;
+}
+.buy {
+  background-color: skyblue;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  border: 1px solid gray;
+}
+
+.cart {
+  background-color: burlywood;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  border: 1px solid gray;
+}
+
+.cart:hover {
+  background-color: brown;
+  transform: scale(1.1);
+}
+
+.buy:hover {
+  background-color: rgb(71, 179, 230);
+  transform: scale(1.1);
+}

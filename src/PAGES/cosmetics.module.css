@@ -25,3 +25,38 @@
   font-weight: bolder;
   color: gray;
 }
+
+.options {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.options button {
+  padding: 10px 50px;
+  height: fit-content;
+  border-radius: 20px;
+}
+.buy {
+  background-color: skyblue;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.cart {
+  background-color: burlywood;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.cart:hover {
+  background-color: brown;
+}
+
+.buy:hover {
+  background-color: rgb(71, 179, 230);
+}

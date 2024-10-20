@@ -81,7 +81,11 @@ const ShoesStore = () => {
       {SHOES_DATA.map((items) => (
         <div key={`d${items.id}`} className={classes.itemWrapper}>
           <img key={items.id} src={items.image} alt="error" />
-          <p key={`a${items.id}`}>price: {`RS ${items.price}`}</p>
+          <div key={`f${items.id}`} className={classes.options}>
+            <p key={`a${items.id}`}>{`RS: ${items.price}`}</p>
+            <button className={classes.buy}>Buy</button>
+            <button className={classes.cart}>Cart</button>
+          </div>
         </div>
       ))}
     </div>
