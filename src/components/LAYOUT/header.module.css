@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  /* background-color: #c8b6ff; */
+  background-color: black;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header a {
+  margin: 10px;
+  color: yellow;
+  text-decoration: none;
+  font-size: x-large;
+  padding: 5px 20px;
+}
+
+.header a:hover,
+.header a:active {
+  border-bottom: 2px solid yellow;
+  border-radius: 5px;
+}
+
+.image {
+  height: 5vw;
+  width: 5vw;
+  animation: slideright 1s ease-out;
+  font-size: 3em; /* Adjust the font size as needed */
+  filter: drop-shadow(5px 5px 1px rgb(199, 199, 199)) invert(100%) sepia(50%)
+    saturate(500%) hue-rotate(260deg) brightness(110%);
+  opacity: 0.8;
+  margin: 20px;
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
