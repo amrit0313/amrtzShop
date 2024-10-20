@@ -1,17 +1,30 @@
+import { NavLink } from "react-router-dom";
 import classes from "./header.module.css";
-import loGo from "../../loGo.png";
 
 const Header = () => {
   return (
     <div className={classes.header}>
-      {/* <div style={{ color: "yellow", marginLeft: "40px" }}> */}
       <h1 style={{ color: "yellow", margin: "50px" }}>Amrtz Shop</h1>
-      {/* <img className={classes.image} src={loGo} alt="no" /> */}
       {/* </div> */}
       <div style={{ marginRight: "40px" }}>
-        <a href="###">Clothes</a>
-        <a href="###">Shoes</a>
-        <a href="###">Skin/Hair</a>
+        <NavLink
+          to="clothes"
+          className={({ isActive }) => (isActive ? classes.active : "")}
+        >
+          Clothes
+        </NavLink>
+        <NavLink
+          to="shoes"
+          className={({ isActive }) => (isActive ? classes.active : "")}
+        >
+          Shoes
+        </NavLink>
+        <NavLink
+          to="products"
+          className={({ isActive }) => (isActive ? classes.active : "")}
+        >
+          Skin/Hair
+        </NavLink>
       </div>
     </div>
   );

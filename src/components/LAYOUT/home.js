@@ -1,5 +1,5 @@
 import classes from "./home.module.css";
-import loGo from "../loGo.png";
+
 const Home = () => {
   const IMG_DATA = [
     {
@@ -24,7 +24,6 @@ const Home = () => {
   return (
     <div className={classes.home}>
       <div className={classes.logos}>
-        {/* <img className={classes.image} src={loGo} alt="no" /> */}
         <p className={classes["transparent-text"]}>
           Hey! Let's look what we love in common
         </p>

@@ -1,0 +1,26 @@
+.mainDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.itemWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid gray;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.itemWrapper img {
+  border-radius: 10px;
+}
+
+.itemWrapper p {
+  font-size: x-large;
+  font-weight: bolder;
+  color: gray;
+}

@@ -16,7 +16,8 @@
 }
 
 .header a:hover,
-.header a:active {
+.header a:active,
+.header a.active {
   border-bottom: 2px solid yellow;
   border-radius: 5px;
 }
