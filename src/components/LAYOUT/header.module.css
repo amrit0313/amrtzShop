@@ -3,7 +3,7 @@
   /* background-color: #c8b6ff; */
   background-color: black;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -31,6 +31,27 @@
     saturate(500%) hue-rotate(260deg) brightness(110%);
   opacity: 0.8;
   margin: 20px;
+}
+
+.header button {
+  padding: 1px 60px;
+  border: 0px;
+  border-radius: 40px;
+  background-color: rgb(194, 114, 61);
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.header button:hover {
+  transform: scale(1.1);
 }
 
 @keyframes slideright {

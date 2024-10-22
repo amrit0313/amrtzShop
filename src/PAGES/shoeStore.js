@@ -1,4 +1,4 @@
-import classes from "./shoeStore.module.css";
+import ProductItems from "../components/PRODUCTS/productItems";
 
 const SHOES_DATA = [
   {
@@ -71,22 +71,27 @@ const SHOES_DATA = [
     id: "s12",
     image:
       "https://images.pexels.com/photos/3782789/pexels-photo-3782789.jpeg?auto=compress&cs=tinysrgb&w=600",
-    price: 4000,
+    price: 40000,
   },
 ];
 
 const ShoesStore = () => {
   return (
-    <div className={classes.mainDiv}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
       {SHOES_DATA.map((items) => (
-        <div key={`d${items.id}`} className={classes.itemWrapper}>
-          <img key={items.id} src={items.image} alt="error" />
-          <div key={`f${items.id}`} className={classes.options}>
-            <p key={`a${items.id}`}>{`RS: ${items.price}`}</p>
-            <button className={classes.buy}>Buy</button>
-            <button className={classes.cart}>Cart</button>
-          </div>
-        </div>
+        <ProductItems
+          id={items.id}
+          key={items.id}
+          image={items.image}
+          price={items.price}
+        />
       ))}
     </div>
   );

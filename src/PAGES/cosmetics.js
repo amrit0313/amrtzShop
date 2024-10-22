@@ -1,4 +1,4 @@
-import classes from "./cosmetics.module.css";
+import ProductItems from "../components/PRODUCTS/productItems";
 
 const COSMETICS_DATA = [
   {
@@ -77,16 +77,21 @@ const COSMETICS_DATA = [
 
 const CosmeticStore = () => {
   return (
-    <div className={classes.mainDiv}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
       {COSMETICS_DATA.map((items) => (
-        <div key={`d${items.id}`} className={classes.itemWrapper}>
-          <img key={items.id} src={items.image} alt="error" />
-          <div key={`f${items.id}`} className={classes.options}>
-            <p key={`a${items.id}`}>{`RS: ${items.price}`}</p>
-            <button className={classes.buy}>Buy</button>
-            <button className={classes.cart}>Cart</button>
-          </div>
-        </div>
+        <ProductItems
+          key={items.id}
+          id={items.id}
+          image={items.image}
+          price={items.price}
+        />
       ))}
     </div>
   );

@@ -1,0 +1,19 @@
+.cartitems {
+  margin: 20px;
+  border: 1px solid gray;
+}
+
+.cartitems img {
+  margin: 20px;
+  height: 30rem;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.cartitems div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cartitems p {
+  color: white;
+  font-size: x-large;
+}

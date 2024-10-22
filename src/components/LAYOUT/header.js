@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
+import cartIcon from "../CART/carticon.png";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className={classes.header}>
       <h1 style={{ color: "yellow", margin: "50px" }}>Amrtz Shop</h1>
@@ -26,6 +28,22 @@ const Header = () => {
           Skin/Hair
         </NavLink>
       </div>
+      <button onClick={() => navigate("cart")}>
+        <div className={classes.buttonDiv}>
+          <img
+            style={{
+              height: "30px",
+              width: "35px",
+              margin: "auto",
+              marginRight: "20px",
+              mixBlendMode: "color-burn",
+            }}
+            src={cartIcon}
+            alt="error"
+          />
+          <p>Add to cart</p>
+        </div>
+      </button>
     </div>
   );
 };

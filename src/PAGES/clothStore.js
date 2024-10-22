@@ -1,4 +1,4 @@
-import classes from "./clothStore.module.css";
+import ProductItems from "../components/PRODUCTS/productItems";
 const CLOTH_DATA = [
   {
     id: "c1",
@@ -15,7 +15,7 @@ const CLOTH_DATA = [
   {
     id: "c3",
     image:
-      "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNoaXJ0fGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hpcnR8ZW58MHx8MHx8fDA%3D",
     price: 7000,
   },
   {
@@ -33,7 +33,8 @@ const CLOTH_DATA = [
   {
     id: "c6",
     image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hpcnR8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNoaXJ0fGVufDB8fDB8fHww",
+
     price: 4600,
   },
   {
@@ -82,16 +83,21 @@ const CLOTH_DATA = [
 
 const ClothStore = () => {
   return (
-    <div className={classes.mainDiv}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
       {CLOTH_DATA.map((items) => (
-        <div key={`d${items.id}`} className={classes.itemWrapper}>
-          <img key={items.id} src={items.image} alt="error" />
-          <div key={`f${items.id}`} className={classes.options}>
-            <p key={`a${items.id}`}>{`RS: ${items.price}`}</p>
-            <button className={classes.buy}>Buy</button>
-            <button className={classes.cart}>Cart</button>
-          </div>
-        </div>
+        <ProductItems
+          key={items.id}
+          id={items.id}
+          image={items.image}
+          price={items.price}
+        />
       ))}
     </div>
   );

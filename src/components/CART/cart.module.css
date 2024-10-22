@@ -1,0 +1,15 @@
+.cart {
+  background-color: rgb(49, 49, 49);
+  height: 100vh;
+  overflow: auto;
+}
+
+.mappedItems {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.cart p {
+  color: white;
+  font-size: x-large;
+}
