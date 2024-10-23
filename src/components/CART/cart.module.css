@@ -1,6 +1,5 @@
 .cart {
   background-color: rgb(49, 49, 49);
-  height: 100vh;
   overflow: auto;
 }
 
@@ -12,4 +11,23 @@
 .cart p {
   color: white;
   font-size: x-large;
+}
+
+.bottomDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  position: relative;
+  top: 0;
+  background-color: purple;
+}
+.bottomDiv button {
+  padding: 15px 60px;
+  background-color: gold;
+  color: purple;
+  font-size: larger;
+  border-radius: 30px;
+  border: 1px solid gray;
 }

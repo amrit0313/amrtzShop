@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import ShoesStore from "./PAGES/shoeStore";
 import CosmeticStore from "./PAGES/cosmetics";
 import Cart from "./components/CART/cart";
+import UserForm from "./components/FORM/userform";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="shoes" element={<ShoesStore />} />
         <Route path="products" element={<CosmeticStore />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="form" element={<UserForm />} />
       </Routes>
     </div>
   );

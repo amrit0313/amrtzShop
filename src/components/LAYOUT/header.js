@@ -1,8 +1,10 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
 import cartIcon from "../CART/carticon.png";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
   return (
     <div className={classes.header}>
@@ -41,7 +43,17 @@ const Header = () => {
             src={cartIcon}
             alt="error"
           />
-          <p>Add to cart</p>
+          <p>Cart</p>
+          <p
+            style={{
+              marginLeft: "20px",
+              backgroundColor: "brown",
+              padding: "7px 20px",
+              borderRadius: "20px",
+            }}
+          >
+            {cart.totalQuantity}
+          </p>
         </div>
       </button>
     </div>

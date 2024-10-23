@@ -41,6 +41,13 @@
   height: fit-content;
   border-radius: 20px;
 }
+.cart {
+  background-color: burlywood;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  border: 1px solid gray;
+}
 .buy {
   background-color: skyblue;
   color: white;
@@ -49,18 +56,21 @@
   border: 1px solid gray;
 }
 
-.cart {
-  background-color: burlywood;
-  color: white;
-  font-size: larger;
-  font-weight: bold;
-  border: 1px solid gray;
+
+
+.buy:hover {
+  transform: scale(1.1);
+  background-color: rgb(71, 179, 230);
+  cursor: pointer;
 }
 
 .cart:hover {
   background-color: brown;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.buy:hover {
-  background-color: rgb(71, 179, 230);
+.cart:active,
+.buy:active {
+  background-color: pink;
 }

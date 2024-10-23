@@ -12,8 +12,32 @@
 .cartitems div {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 .cartitems p {
   color: white;
   font-size: x-large;
+}
+
+.alterItems {
+  background: transparent;
+  border: 1px solid rgb(119, 119, 119);
+  padding: 0px 12px;
+  color: white;
+  border-radius: 5px;
+  font-size: larger;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.buy {
+  padding: 10px 30px;
+  background-color: rgb(109, 114, 36);
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 30px;
+}
+
+.buy:hover {
+  background-color: yellow;
+  cursor: pointer;
 }

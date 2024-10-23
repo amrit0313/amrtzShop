@@ -1,10 +1,10 @@
 .header {
   display: flex;
-  /* background-color: #c8b6ff; */
   background-color: black;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
+  flex: 1;
+  width: 100vw;
 }
 
 .header a {
