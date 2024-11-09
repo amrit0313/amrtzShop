@@ -17,12 +17,14 @@ const ProductItems = (props) => {
         <img src={props.image} alt="error" />
         <div className={classes.options}>
           <p>{`RS: ${props.price}`}</p>
-          <button onClick={() => navigate("/form")} className={classes.buy}>
-            Buy
-          </button>
-          <button onClick={addToCartHandler} className={classes.cart}>
-            Cart
-          </button>
+          <div style={{ display: "flex" }}>
+            <button onClick={() => navigate("/form")} className={classes.buy}>
+              Buy
+            </button>
+            <button onClick={addToCartHandler} className={classes.cart}>
+              Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>

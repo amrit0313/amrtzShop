@@ -1,0 +1,41 @@
+.authDiv {
+  display: flex;
+  margin: 40px auto;
+}
+.authDiv form {
+  margin: auto;
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(153, 34, 153);
+  width: fit-content;
+}
+.authDiv input {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.authDiv label {
+  text-align: start;
+  margin-bottom: 5px;
+  color: white;
+}
+.authDiv .button {
+  background-color: rgb(7, 7, 150);
+  margin: 10px auto;
+  padding: 5px 20px;
+  font-size: larger;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.toggle {
+  background-color: transparent;
+  border: 0cap;
+  color: rgb(6, 9, 187);
+  text-decoration: underline;
+  font-size: large;
+  cursor: pointer;
+}

@@ -5,57 +5,56 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const cart = useSelector((state) => state.cart);
+  const auth = useSelector((state) => state.auth);
   const navigate = useNavigate();
   return (
     <div className={classes.header}>
-      <h1 style={{ color: "yellow", margin: "50px" }}>Amrtz Shop</h1>
-      {/* </div> */}
-      <div style={{ marginRight: "40px" }}>
-        <NavLink
-          to="clothes"
-          className={({ isActive }) => (isActive ? classes.active : "")}
-        >
-          Clothes
-        </NavLink>
-        <NavLink
-          to="shoes"
-          className={({ isActive }) => (isActive ? classes.active : "")}
-        >
-          Shoes
-        </NavLink>
-        <NavLink
-          to="products"
-          className={({ isActive }) => (isActive ? classes.active : "")}
-        >
-          Skin/Hair
-        </NavLink>
-      </div>
-      <button onClick={() => navigate("cart")}>
-        <div className={classes.buttonDiv}>
-          <img
-            style={{
-              height: "30px",
-              width: "35px",
-              margin: "auto",
-              marginRight: "20px",
-              mixBlendMode: "color-burn",
-            }}
-            src={cartIcon}
-            alt="error"
-          />
-          <p>Cart</p>
-          <p
-            style={{
-              marginLeft: "20px",
-              backgroundColor: "brown",
-              padding: "7px 20px",
-              borderRadius: "20px",
-            }}
+      <h1>Amrtz Shop</h1>
+      <div className={classes.links} style={{ marginRight: "40px" }}>
+        {auth.isLoggedIn && (
+          <NavLink
+            to="clothes"
+            className={({ isActive }) => (isActive ? classes.active : "")}
           >
-            {cart.totalQuantity}
-          </p>
-        </div>
-      </button>
+            Clothes
+          </NavLink>
+        )}
+        {auth.isLoggedIn && (
+          <NavLink
+            to="shoes"
+            className={({ isActive }) => (isActive ? classes.active : "")}
+          >
+            Shoes
+          </NavLink>
+        )}
+        {auth.isLoggedIn && (
+          <NavLink
+            to="products"
+            className={({ isActive }) => (isActive ? classes.active : "")}
+          >
+            Skin/Hair
+          </NavLink>
+        )}
+      </div>
+      <div className={classes.buttonDiv}>
+        {auth.isLoggedIn && (
+          <button
+            className={classes.cartButton}
+            onClick={() => navigate("cart")}
+          >
+            <div>
+              <img src={cartIcon} alt="error" />
+              <p>Cart</p>
+              <p>{cart.totalQuantity}</p>
+            </div>
+          </button>
+        )}
+        {!auth.isLoggedIn && (
+          <button onClick={() => navigate("/auth")} className={classes.login}>
+            Sign in
+          </button>
+        )}
+      </div>
     </div>
   );
 };

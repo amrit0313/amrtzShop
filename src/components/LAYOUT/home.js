@@ -36,6 +36,9 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <div className={classes.belowDetail}>
+        <p>Made By Amrit</p>
+      </div>
     </div>
   );
 };

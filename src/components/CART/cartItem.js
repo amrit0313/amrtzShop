@@ -30,7 +30,7 @@ const CartItems = (props) => {
             +
           </button>
         </div>
-        <p>{`RS: ${totalPrice}`}</p>
+        <p className={classes.pricetag}>{`RS: ${totalPrice}`}</p>
         <button onClick={() => navigate("/form")} className={classes.buy}>
           BUY
         </button>

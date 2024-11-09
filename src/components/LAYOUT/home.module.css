@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&family=Tangerine:wght@400;700&display=swap");
 .home {
   position: relative;
   z-index: 1;
   display: flex;
-  background-color: #6e6e6e;
+  background-color: #fdfdfd;
   color: purple;
   height: 100vh;
   flex-direction: column;
-  width: 100vw;
+  padding: auto;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .logos {
@@ -38,7 +41,7 @@
 }
 .transparent-text {
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px black;
   font-size: 5em;
 }
 .imgdiv {
@@ -50,7 +53,6 @@
   align-items: center;
   border-radius: 10px;
   animation: slideup 1s ease-out;
-
   padding: 10px;
   box-sizing: border-box;
 }
@@ -71,7 +73,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0.6;
-  color: white;
+  color: black;
   font-weight: bolder;
   font-size: 1.5rem;
   text-align: center;
@@ -114,5 +116,36 @@
   100% {
     transform: translateY(0%);
     opacity: 0.4;
+  }
+}
+
+.belowDetail {
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+}
+.belowDetail p {
+  color: black;
+  font-size: xx-large;
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media (max-width: 660px) {
+  imgdiv {
+    margin: 5px;
+    border: 2px solid gray;
+    flex-direction: column;
+    border-radius: 10px;
+    animation: slideup 1s ease-out;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .imageContainer {
+    margin: 10px;
+    border-radius: 10px;
+    visibility: hidden;
   }
 }

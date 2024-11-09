@@ -1,6 +1,6 @@
 .cart {
   background-color: rgb(49, 49, 49);
-  overflow: auto;
+  overflow: hidden;
 }
 
 .mappedItems {
@@ -30,4 +30,30 @@
   font-size: larger;
   border-radius: 30px;
   border: 1px solid gray;
+  cursor: pointer;
+}
+
+@media (max-width: 660px) {
+  .cart p {
+    color: white;
+    font-size: medium;
+  }
+  .bottomDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    position: relative;
+    top: 0;
+    background-color: purple;
+  }
+  .bottomDiv button {
+    padding: 10px 30px;
+    background-color: gold;
+    color: purple;
+    font-size: medium;
+    border-radius: 30px;
+    border: 1px solid gray;
+  }
 }

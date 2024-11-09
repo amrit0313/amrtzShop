@@ -3,8 +3,13 @@
   background-color: black;
   align-items: center;
   justify-content: space-around;
-  flex: 1;
-  width: 100vw;
+  object-fit: fill;
+  overflow: hidden;
+}
+
+.header h1 {
+  color: yellow;
+  margin: 50px;
 }
 
 .header a {
@@ -22,19 +27,8 @@
   border-radius: 5px;
 }
 
-.image {
-  height: 5vw;
-  width: 5vw;
-  animation: slideright 1s ease-out;
-  font-size: 3em; /* Adjust the font size as needed */
-  filter: drop-shadow(5px 5px 1px rgb(199, 199, 199)) invert(100%) sepia(50%)
-    saturate(500%) hue-rotate(260deg) brightness(110%);
-  opacity: 0.8;
-  margin: 20px;
-}
-
-.header button {
-  padding: 1px 60px;
+.cartButton {
+  padding: 1px 20px;
   border: 0px;
   border-radius: 40px;
   background-color: rgb(194, 114, 61);
@@ -50,8 +44,34 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+.buttonDiv img {
+  height: 30px;
+  width: 35px;
+  margin: auto 2px;
+  mix-blend-mode: color-burn;
+}
+
+.buttonDiv p {
+  margin-left: 20px;
+  background-color: brown;
+  padding: 7px 20px;
+  border-radius: 20px;
+}
+.buttonDiv div {
+  display: flex;
+}
 .header button:hover {
   transform: scale(1.1);
+}
+.login {
+  background-color: rgb(184, 0, 184);
+  padding: 15px 40px;
+  margin: 20px auto;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  font-size: larger;
 }
 
 @keyframes slideright {
@@ -62,5 +82,54 @@
   100% {
     transform: translateX(0%);
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .header a {
+    display: block;
+    padding: 10px 10px;
+    font-size: medium;
+    margin: 0;
+  }
+  .header h1 {
+    font-size: medium;
+    margin: 10px;
+  }
+
+  .cartButton {
+    padding-left: 10px;
+    border: 0px;
+    border-radius: 40px;
+    background-color: rgb(194, 114, 61);
+    color: white;
+    font-size: medium;
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    margin: 40px auto;
+  }
+
+  .buttonDiv img {
+    height: 20px;
+    width: 30px;
+    margin: auto 0px;
+    mix-blend-mode: color-burn;
+  }
+  .buttonDiv p {
+    margin-left: 5px;
+    background-color: rgb(194, 114, 61);
+    padding: 1px 5px;
+    border-radius: 20px;
+    font-size: small;
+  }
+  .login {
+    background-color: rgb(184, 0, 184);
+    padding: 7px 10px;
+    margin: 20px auto;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-size: medium;
   }
 }
