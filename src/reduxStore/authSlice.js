@@ -7,7 +7,7 @@ const AuthSlice = createSlice({
     token: null,
     loading: false,
     error: null,
-    userId: null,
+    user: null,
   },
   reducers: {
     loginStart(state) {
@@ -15,10 +15,12 @@ const AuthSlice = createSlice({
       state.error = null;
     },
     loginSucesss(state, action) {
+      localStorage.setItem("token", action.payload.idToken);
+      localStorage.setItem("user", action.payload.email);
       state.loading = false;
       state.isLoggedIn = true;
       state.token = action.payload.idToken;
-      state.user = action.payload.localId;
+      state.user = action.payload.email;
     },
     loginFailure(state, action) {
       state.loading = false;

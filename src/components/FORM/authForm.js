@@ -37,7 +37,6 @@ const AuthForm = () => {
         headers: { "Content-Type": "application/json" },
       });
       const responseData = await response.json();
-      console.log(responseData);
       if (!response.ok) {
         if (responseData && responseData.error && responseData.error.message) {
           throw new Error(responseData.error.message);
@@ -48,11 +47,10 @@ const AuthForm = () => {
       dispatch(
         authActions.loginSucesss({
           idToken: responseData.idToken,
-          localId: responseData.localId,
+          email: responseData.localId,
         })
       );
       navigate("");
-      console.log("success:", responseData);
     } catch (error) {
       dispatch(authActions.loginFailure(error.message));
       alert(error.message);

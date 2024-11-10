@@ -8,10 +8,32 @@ import CosmeticStore from "./PAGES/cosmetics";
 import Cart from "./components/CART/cart";
 import UserForm from "./components/FORM/userform";
 import AuthForm from "./components/FORM/authForm";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchcartData, sendCartData } from "./reduxStore/cartActions";
 
+let isInitial = true;
 function App() {
   const auth = useSelector((state) => state.auth);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (auth.isLoggedIn) {
+      dispatch(fetchcartData());
+    }
+  }, [dispatch, auth.isLoggedIn]);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+  }, [dispatch, cart]);
+
   return (
     <div className="App">
       <Header />
