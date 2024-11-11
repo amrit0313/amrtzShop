@@ -11,7 +11,8 @@ const Home = () => {
     {
       id: "p2",
       image:
-        "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=600",
+
       price: "14000",
     },
     {
@@ -30,9 +31,9 @@ const Home = () => {
       </div>
       <div className={classes.imageContainer}>
         {IMG_DATA.map((items) => (
-          <div className={classes.imgdiv}>
+          <div key={`m${items.id}`} className={classes.imgdiv}>
             <img key={items.id} src={items.image} alt="error" />
-            <div className={classes.overlayText}>Price: RS {items.price}</div>
+            <p key={`d${items.id}`}>Price: RS {items.price}</p>
           </div>
         ))}
       </div>

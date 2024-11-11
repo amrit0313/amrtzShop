@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  background-color: black;
+  background-color: white;
   align-items: center;
   justify-content: space-around;
   object-fit: fill;
@@ -8,70 +8,58 @@
 }
 
 .header h1 {
-  color: yellow;
+  color: black;
   margin: 50px;
 }
 
 .header a {
   margin: 10px;
-  color: yellow;
+  color: black;
   text-decoration: none;
   font-size: x-large;
+  font-weight: bold;
   padding: 5px 20px;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
-  border-bottom: 2px solid yellow;
+  border-bottom: 2px solid black;
   border-radius: 5px;
 }
 
 .cartButton {
-  padding: 1px 20px;
   border: 0px;
-  border-radius: 40px;
-  background-color: rgb(194, 114, 61);
-  color: white;
   font-weight: bolder;
-  font-size: larger;
+  font-size: large;
   text-align: center;
   cursor: pointer;
+  margin: 20px;
 }
 
 .buttonDiv {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+.logout {
+  margin: auto;
+  background-color: white;
+  font-size: large;
+  border: 0px;
+  cursor: pointer;
 }
 
-.buttonDiv img {
-  height: 30px;
-  width: 35px;
-  margin: auto 2px;
-  mix-blend-mode: color-burn;
-}
-
-.buttonDiv p {
-  margin-left: 20px;
-  background-color: brown;
-  padding: 7px 20px;
-  border-radius: 20px;
-}
-.buttonDiv div {
-  display: flex;
-}
 .header button:hover {
-  transform: scale(1.1);
+  transform: scale(0.95);
 }
 .login {
-  background-color: rgb(184, 0, 184);
-  padding: 15px 40px;
+  background-color: white;
   margin: 20px auto;
-  color: white;
-  border: 1px solid gray;
+  color: black;
+  border: 0px;
   border-radius: 20px;
   font-size: larger;
+  cursor: pointer;
 }
 
 @keyframes slideright {
@@ -97,39 +85,13 @@
     margin: 10px;
   }
 
-  .cartButton {
-    padding-left: 10px;
-    border: 0px;
-    border-radius: 40px;
-    background-color: rgb(194, 114, 61);
-    color: white;
-    font-size: medium;
-    font-weight: lighter;
-    text-align: center;
-    cursor: pointer;
-    margin: 40px auto;
-  }
-
-  .buttonDiv img {
-    height: 20px;
-    width: 30px;
-    margin: auto 0px;
-    mix-blend-mode: color-burn;
-  }
-  .buttonDiv p {
-    margin-left: 5px;
-    background-color: rgb(194, 114, 61);
-    padding: 1px 5px;
-    border-radius: 20px;
-    font-size: small;
-  }
   .login {
-    background-color: rgb(184, 0, 184);
-    padding: 7px 10px;
+    background-color: white;
     margin: 20px auto;
-    color: white;
-    border: 1px solid gray;
+    color: black;
+    border: 0px;
     border-radius: 20px;
-    font-size: medium;
+    font-size: larger;
+    cursor: pointer;
   }
 }

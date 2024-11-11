@@ -4,37 +4,39 @@
 }
 .authDiv form {
   margin: auto;
-  padding: 10px 50px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(153, 34, 153);
+  background-color: white;
   width: fit-content;
 }
 .authDiv input {
   margin-bottom: 20px;
   padding: 10px;
+  width: 20rem;
 }
 
 .authDiv label {
   text-align: start;
+  font-size: large;
   margin-bottom: 5px;
-  color: white;
+  color: black;
 }
 .authDiv .button {
-  background-color: rgb(7, 7, 150);
-  margin: 10px auto;
-  padding: 5px 20px;
+  background-color: black;
+  margin-bottom: 20px;
+  margin-right: 55%;
+  padding: 10px 20px;
   font-size: larger;
+  font-weight: bold;
   color: white;
-  border: 1px solid gray;
-  border-radius: 20px;
+  border: 0px solid gray;
   cursor: pointer;
 }
 
 .toggle {
   background-color: transparent;
   border: 0cap;
-  color: rgb(6, 9, 187);
+  color: black;
   text-decoration: underline;
   font-size: large;
   cursor: pointer;

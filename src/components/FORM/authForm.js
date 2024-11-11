@@ -80,7 +80,7 @@ const AuthForm = () => {
         />
         {!auth.loading && (
           <button type="submit" className={classes.button}>
-            {islogin ? "login" : "Create Account"}
+            {islogin ? "SIGN IN" : "SIGN UP"}
           </button>
         )}
         {!auth.loading && (
@@ -88,7 +88,7 @@ const AuthForm = () => {
             {islogin ? "Create Account" : "Login With Existing"}
           </button>
         )}
-        {auth.loading && <p style={{ color: "blue" }}>Sending Request</p>}
+        {auth.loading && <p style={{ color: "black" }}>Sending Request ...</p>}
       </form>
     </div>
   );

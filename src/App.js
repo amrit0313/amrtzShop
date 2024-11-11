@@ -45,8 +45,8 @@ function App() {
         {auth.isLoggedIn && (
           <Route path="products" element={<CosmeticStore />} />
         )}
-        <Route path="cart" element={<Cart />} />
-        <Route path="form" element={<UserForm />} />
+        {auth.isLoggedIn && <Route path="cart" element={<Cart />} />}
+        {auth.isLoggedIn && <Route path="form" element={<UserForm />} />}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

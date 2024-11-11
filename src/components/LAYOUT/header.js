@@ -1,12 +1,21 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
-import cartIcon from "../CART/carticon.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import cartIcon from "../../cart.png";
+import { authActions } from "../../reduxStore/authSlice";
 
 const Header = () => {
-  const cart = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    alert("Wanna logout?");
+    dispatch(authActions.logout());
+    navigate("auth");
+  };
+
   return (
     <div className={classes.header}>
       <h1>Amrtz Shop</h1>
@@ -42,11 +51,21 @@ const Header = () => {
             className={classes.cartButton}
             onClick={() => navigate("cart")}
           >
-            <div>
-              <img src={cartIcon} alt="error" />
-              <p>Cart</p>
-              <p>{cart.totalQuantity}</p>
-            </div>
+            <img
+              style={{
+                height: "3rem",
+                width: "3rem",
+                mixBlendMode: "color-burn",
+              }}
+              src={cartIcon}
+              alt="error"
+            />
+          </button>
+        )}
+
+        {auth.isLoggedIn && (
+          <button onClick={logoutHandler} className={classes.logout}>
+            logout
           </button>
         )}
         {!auth.isLoggedIn && (
