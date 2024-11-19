@@ -8,6 +8,7 @@ const AuthSlice = createSlice({
     loading: false,
     error: null,
     user: null,
+    email: null,
   },
   reducers: {
     loginStart(state) {
@@ -20,7 +21,8 @@ const AuthSlice = createSlice({
       state.loading = false;
       state.isLoggedIn = true;
       state.token = action.payload.idToken;
-      state.user = action.payload.email;
+      state.user = action.payload.id;
+      state.email = action.payload.email;
     },
     loginFailure(state, action) {
       state.loading = false;

@@ -1,16 +1,29 @@
 import { useState } from "react";
 import classes from "./userForm.module.css";
+import { useSelector } from "react-redux";
 const UserForm = () => {
+  const auth = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     name: "",
     number: "",
     address: "",
-    street: "",
   });
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    const response = await fetch(
+      `https://amrtzshop-default-rtdb.asia-southeast1.firebasedatabase.app/${auth.user}/CheckoutDetails.json`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: formData.name,
+          number: formData.number,
+          address: formData.address,
+        }),
+      }
+    );
   };
 
   const changeHandler = (e) => {
@@ -51,17 +64,6 @@ const UserForm = () => {
           placeholder="Enter Your address"
           onChange={changeHandler}
           value={formData.address}
-        />
-      </div>
-      <div className={classes.formgroup}>
-        <label htmlFor="name">street</label>
-        <input
-          type="text"
-          id="street"
-          name="street"
-          placeholder="Enter Your street"
-          onChange={changeHandler}
-          value={formData.street}
         />
       </div>
       <div className={classes.formgroup}>

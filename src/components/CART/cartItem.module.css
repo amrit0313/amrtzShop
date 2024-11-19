@@ -46,7 +46,7 @@
 
   .cartitems img {
     margin: 10px;
-    height: 200px;
+    height: 20rem;
     aspect-ratio: 1/1;
     object-fit: contain;
   }

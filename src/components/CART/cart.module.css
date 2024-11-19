@@ -13,7 +13,7 @@
   font-size: x-large;
 }
 
-.bottomDiv {
+.topDiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,15 +23,18 @@
   top: 0;
   background-color: black;
 }
-.bottomDiv button {
+.topDiv button {
   padding: 15px 60px;
   color: white;
   background-color: black;
   font-size: x-large;
   font-weight: bolder;
-  border-radius: 30px;
   border: 0px;
   cursor: pointer;
+}
+.topDiv button:hover {
+  background: linear-gradient(45deg, black, white, black);
+  color: black;
 }
 
 @media (max-width: 660px) {
@@ -39,7 +42,7 @@
     color: white;
     font-size: medium;
   }
-  .bottomDiv {
+  .topDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,12 +52,11 @@
     top: 0;
     background-color: black;
   }
-  .bottomDiv button {
+  .topDiv button {
     padding: 10px 30px;
     background-color: black;
     color: white;
     font-size: medium;
-    border-radius: 30px;
     border: 0px;
   }
 }

@@ -7,7 +7,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
   return (
     <div className={classes.cart}>
-      <div className={classes.bottomDiv}>
+      <div className={classes.topDiv}>
         <p>{`×${cartItems.totalQuantity} items`}</p>
         <p>{`Total Cost: RS ${cartItems.totalAmount}`}</p>
         <button onClick={() => navigate("/form")}>BUY</button>

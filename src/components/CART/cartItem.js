@@ -1,10 +1,8 @@
 import { useDispatch } from "react-redux";
 import classes from "./cartItem.module.css";
 import { cartActions } from "../../reduxStore/cartSlice";
-import { useNavigate } from "react-router-dom";
 
 const CartItems = (props) => {
-  const navigate = useNavigate();
   const { id, quantity, image, price, totalPrice } = props;
   const dispatch = useDispatch();
   const addToCartHandler = () => {
@@ -31,9 +29,6 @@ const CartItems = (props) => {
           </button>
         </div>
         <p className={classes.pricetag}>{`RS: ${totalPrice}`}</p>
-        <button onClick={() => navigate("/form")} className={classes.buy}>
-          BUY
-        </button>
       </div>
     </div>
   );

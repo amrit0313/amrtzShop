@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import classes from "./home.module.css";
 
 const Home = () => {
+  const auth = useSelector((state) => state.auth);
   const IMG_DATA = [
     {
       id: "p1",
@@ -25,9 +27,20 @@ const Home = () => {
   return (
     <div className={classes.home}>
       <div className={classes.logos}>
-        <p className={classes["transparent-text"]}>
-          Hey! Let's look what we love in common
-        </p>
+        {!auth.isLoggedIn && (
+          <p className={classes.text}>
+            Sign In and enjoy the best shopping experience!
+          </p>
+        )}
+        {!auth.isLoggedIn && (
+          <p className={classes.text}>
+            Click the Sign In option on the top right..
+          </p>
+        )}
+        {auth.isLoggedIn && <p className={classes.text}>Hey! welcome</p>}
+        {auth.isLoggedIn && (
+          <p className={classes.text}>Let's find some amazing stuff</p>
+        )}
       </div>
       <div className={classes.imageContainer}>
         {IMG_DATA.map((items) => (

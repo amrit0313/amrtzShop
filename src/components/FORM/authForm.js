@@ -47,7 +47,8 @@ const AuthForm = () => {
       dispatch(
         authActions.loginSucesss({
           idToken: responseData.idToken,
-          email: responseData.localId,
+          id: responseData.localId,
+          email: responseData.email,
         })
       );
       navigate("");
@@ -88,7 +89,7 @@ const AuthForm = () => {
             {islogin ? "Create Account" : "Login With Existing"}
           </button>
         )}
-        {auth.loading && <p style={{ color: "black" }}>Sending Request ...</p>}
+        {auth.loading && <div className={classes.loader}></div>}
       </form>
     </div>
   );
