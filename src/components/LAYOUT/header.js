@@ -1,25 +1,18 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import cartIcon from "../../cart.svg";
-import { authActions } from "../../reduxStore/authSlice";
 import logo from "../../loGo.png";
-import log from "../../pp.svg";
+// import { LiaUserSolid } from "react-icons/lia";
 
-const Header = () => {
+const Header = (props) => {
   const auth = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
   const navigate = useNavigate();
 
-  const logoutHandler = () => {
-    alert("Wanna logout?");
-    dispatch(authActions.logout());
-    navigate("auth");
-  };
-
   return (
-    <div className={classes.header}>
+    <div className={auth.isLoggedIn ? classes.header : classes.headerbefore}>
       <div className={classes.cover}>
         <div className={classes.logoDiv}>
           <Link to="/">
@@ -45,7 +38,7 @@ const Header = () => {
           )}
           {auth.isLoggedIn && (
             <NavLink
-              to="products"
+              to="cosmetics"
               className={({ isActive }) => (isActive ? classes.active : "")}
             >
               Skin/Hair
@@ -60,17 +53,21 @@ const Header = () => {
             onClick={() => navigate("cart")}
           >
             <img src={cartIcon} alt="error" />
+            {cart.totalQuantity > 0 && (
+              <p className={classes.quantity}>{cart.totalQuantity}</p>
+            )}
           </button>
         )}
 
         {auth.isLoggedIn && (
-          <button onClick={logoutHandler} className={classes.logout}>
+          <button onClick={props.showModal} className={classes.logout}>
             logout
           </button>
         )}
         {!auth.isLoggedIn && (
-          <button onClick={() => navigate("/auth")} className={classes.login}>
-            <img src={log} alt="profile" />
+          <button onClick={props.onLogin} className={classes.login}>
+            {/* <LiaUserSolid style={{ fontSize: "40px", strokeWidth: "0.1" }} /> */}{" "}
+            Log In
           </button>
         )}
       </div>

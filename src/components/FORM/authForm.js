@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./authForm.module.css";
 import { useRef, useState } from "react";
+import Modal from "../LAYOUT/modal";
 import { authActions } from "../../reduxStore/authSlice";
 import { useNavigate } from "react-router-dom";
 
-const AuthForm = () => {
+const AuthForm = (props) => {
   const emailInputRef = useRef();
   const auth = useSelector((state) => state.auth);
   const passwordInputRef = useRef();
@@ -52,6 +53,7 @@ const AuthForm = () => {
         })
       );
       navigate("");
+      props.onSigned();
     } catch (error) {
       dispatch(authActions.loginFailure(error.message));
       alert(error.message);
@@ -63,8 +65,8 @@ const AuthForm = () => {
     setIsLogin((prev) => !prev);
   };
   return (
-    <div className={classes.authDiv}>
-      <form onSubmit={submitHandler}>
+    <Modal onCancel={props.onCancel}>
+      <form className={classes.authform} onSubmit={submitHandler}>
         <label>E-mail</label>
         <input
           placeholder="Enter Your Name"
@@ -91,7 +93,7 @@ const AuthForm = () => {
         )}
         {auth.loading && <div className={classes.loader}></div>}
       </form>
-    </div>
+    </Modal>
   );
 };
 

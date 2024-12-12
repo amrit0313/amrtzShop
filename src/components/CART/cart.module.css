@@ -1,6 +1,9 @@
 .cart {
   background-color: rgb(49, 49, 49);
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  top: 25vh;
+  min-height: 100vh;
 }
 
 .mappedItems {
@@ -8,11 +11,6 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.cart p {
-  color: white;
-  font-size: x-large;
-}
-
 .topDiv {
   display: flex;
   justify-content: space-between;
@@ -21,24 +19,33 @@
   padding: 20px 40px;
   position: relative;
   top: 0;
-  background-color: black;
+  background-color: rgb(24, 24, 24);
+  width: 100%;
+  position: fixed;
+  top: 15vh;
+}
+.topDiv p {
+  color: white;
+  font-size: x-large;
 }
 .topDiv button {
   padding: 15px 60px;
   color: white;
-  background-color: black;
+  background-color: rgb(24, 24, 24);
   font-size: x-large;
   font-weight: bolder;
   border: 0px;
   cursor: pointer;
 }
 .topDiv button:hover {
-  background: linear-gradient(45deg, black, white, black);
-  color: black;
+  transform: scale(1.1);
+  background-color: black;
+  border-radius: 40px;
+  color: yellow;
 }
 
 @media (max-width: 660px) {
-  .cart p {
+  .topDiv p {
     color: white;
     font-size: medium;
   }
@@ -48,8 +55,8 @@
     align-items: center;
     box-sizing: border-box;
     padding: 20px 10px;
-    position: relative;
-    top: 0;
+    position: fixed;
+    top: 15vh;
     background-color: black;
   }
   .topDiv button {

@@ -9,14 +9,18 @@ import Cart from "./components/CART/cart";
 import UserForm from "./components/FORM/userform";
 import AuthForm from "./components/FORM/authForm";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchcartData, sendCartData } from "./reduxStore/cartActions";
+import LogoutModal from "./components/LAYOUT/logoutModal";
+import { authActions } from "./reduxStore/authSlice";
 
 let isInitial = true;
+
 function App() {
   const auth = useSelector((state) => state.auth);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (auth.isLoggedIn) {
@@ -34,16 +38,30 @@ function App() {
     }
   }, [dispatch, cart]);
 
+  const doLogout = () => {
+    setShowModal((prev) => !prev);
+    dispatch(authActions.logout());
+  };
+
+  const toggleModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
   return (
     <div className="App">
-      <Header />
+      {auth.isLoggedIn && showModal && (
+        <LogoutModal onYes={doLogout} onCancel={toggleModal} />
+      )}
+      {!auth.isLoggedIn && showModal && (
+        <AuthForm onCancel={toggleModal} onSigned={toggleModal} />
+      )}
+      <Header showModal={toggleModal} onLogin={toggleModal} />
       <Routes>
         <Route path="" element={<Home />} />
-        {!auth.isLoggedIn && <Route path="auth" element={<AuthForm />} />}
         {auth.isLoggedIn && <Route path="clothes" element={<ClothStore />} />}
         {auth.isLoggedIn && <Route path="shoes" element={<ShoesStore />} />}
         {auth.isLoggedIn && (
-          <Route path="products" element={<CosmeticStore />} />
+          <Route path="cosmetics" element={<CosmeticStore />} />
         )}
         {auth.isLoggedIn && <Route path="cart" element={<Cart />} />}
         {auth.isLoggedIn && <Route path="form" element={<UserForm />} />}

@@ -1,20 +1,58 @@
 import { useState } from "react";
 import classes from "./userForm.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { cartActions } from "../../reduxStore/cartSlice";
+import { cartToCheckoutDetails } from "../../reduxStore/cartActions";
+import { deleteCartDatabase } from "../../reduxStore/cartActions";
+
 const UserForm = () => {
   const auth = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     name: "",
     number: "",
     address: "",
   });
 
+  const [correctFormData, setCorrectFormData] = useState({
+    correctName: true,
+    correctNumber: true,
+    correctAddress: true,
+  });
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    let isValid = true;
 
-    const response = await fetch(
-      `https://amrtzshop-default-rtdb.asia-southeast1.firebasedatabase.app/${auth.user}/CheckoutDetails.json`,
+    if (!formData.name) {
+      setCorrectFormData((prev) => ({ ...prev, correctName: false }));
+      isValid = false;
+    } else {
+      setCorrectFormData((prev) => ({ ...prev, correctName: true }));
+    }
+
+    if (formData.number.length !== 10) {
+      setCorrectFormData((prev) => ({ ...prev, correctNumber: false }));
+      isValid = false;
+    } else {
+      setCorrectFormData((prev) => ({ ...prev, correctNumber: true }));
+    }
+
+    if (!formData.address) {
+      setCorrectFormData((prev) => ({ ...prev, correctAddress: false }));
+      isValid = false;
+    } else {
+      setCorrectFormData((prev) => ({ ...prev, correctAddress: true }));
+    }
+
+    if (!isValid) {
+      return;
+    }
+    await fetch(
+      `https://amrtzshop-default-rtdb.asia-southeast1.firebasedatabase.app/${auth.user}/checkoutDetails.json`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -24,6 +62,11 @@ const UserForm = () => {
         }),
       }
     );
+
+    dispatch(cartToCheckoutDetails());
+    dispatch(deleteCartDatabase());
+    dispatch(cartActions.emptyCartHandler());
+    navigate("/");
   };
 
   const changeHandler = (e) => {
@@ -43,6 +86,11 @@ const UserForm = () => {
           onChange={changeHandler}
           value={formData.name}
         />
+        {!correctFormData.correctName && (
+          <p style={{ color: "red", fontWeight: "lighter" }}>
+            Name field is required
+          </p>
+        )}
       </div>
       <div className={classes.formgroup}>
         <label htmlFor="name">Phone Number</label>
@@ -54,6 +102,11 @@ const UserForm = () => {
           onChange={changeHandler}
           value={formData.number}
         />
+        {!correctFormData.correctNumber && (
+          <p style={{ color: "red", fontWeight: "lighter" }}>
+            Phone Number should be of 10 numbers
+          </p>
+        )}
       </div>
       <div className={classes.formgroup}>
         <label htmlFor="name">Enter Address</label>
@@ -65,6 +118,11 @@ const UserForm = () => {
           onChange={changeHandler}
           value={formData.address}
         />
+        {!correctFormData.correctAddress && (
+          <p style={{ color: "red", fontWeight: "lighter" }}>
+            Address field is required
+          </p>
+        )}
       </div>
       <div className={classes.formgroup}>
         <button>Buy</button>

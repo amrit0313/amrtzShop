@@ -83,6 +83,8 @@ const ShoesStore = () => {
         justifyContent: "space-evenly",
         flexWrap: "wrap",
         alignItems: "center",
+        backgroundColor: "#ebebeb",
+        paddingBottom: "10rem",
       }}
     >
       {SHOES_DATA.map((items) => (

@@ -10,8 +10,8 @@ const cartSlice = createSlice({
   },
   reducers: {
     replacecart(state, action) {
-      state.items = action.payload.items || [];
-      state.totalQuantity = action.payload.totalQuantity || 0;
+      state.items = action.payload.items ?? [];
+      state.totalQuantity = action.payload.totalQuantity;
       state.totalAmount = action.payload.totalAmount;
     },
     addItemToCartHandler(state, action) {
@@ -35,11 +35,6 @@ const cartSlice = createSlice({
         existingItem.totalPrice += newItem.price;
         state.price = newItem.price;
       }
-      // console.log(
-      //   "Updated state.items:",
-      //   JSON.parse(JSON.stringify(state.items))
-      // );
-      // console.log(state.totalAmount);
     },
     removeItemFromCartHandler(state, action) {
       state.changed = true;
@@ -53,6 +48,12 @@ const cartSlice = createSlice({
       }
       state.totalAmount -= selectedItem.price;
       state.totalQuantity--;
+    },
+    emptyCartHandler(state) {
+      state.items = [];
+      state.totalQuantity = 0;
+      state.totalAmount = 0;
+      state.changed = false;
     },
   },
 });

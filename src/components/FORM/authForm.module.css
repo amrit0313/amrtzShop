@@ -1,27 +1,25 @@
-.authDiv {
-  display: flex;
-  margin: 40px auto;
-}
-.authDiv form {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+.authform {
   background-color: white;
   width: fit-content;
+  z-index: 21;
+  position: relative;
+  top: 0;
 }
-.authDiv input {
+.authform input {
   margin-bottom: 20px;
-  padding: 10px;
-  width: 20rem;
+  padding: 10px 10px;
+  width: 90%;
 }
 
-.authDiv label {
+.authform label {
   text-align: start;
-  font-size: large;
+  font-size: larger;
+  font-weight: bolder;
   margin-bottom: 5px;
   color: black;
+  font-family: monospace;
 }
-.authDiv .button {
+.authform .button {
   background-color: black;
   margin-bottom: 20px;
   margin-right: 55%;

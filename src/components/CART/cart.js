@@ -14,16 +14,16 @@ const Cart = () => {
       </div>
       <div className={classes.mappedItems}>
         {cartItems.items.map((items) => (
-          <CartItems
-            key={items.id}
-            id={items.id}
-            image={items.image}
-            totalPrice={items.totalPrice}
-            price={items.price}
-            quantity={items.quantity}
-            total={items.totalPrice}
-          />
-        ))}
+            <CartItems
+              key={items.id}
+              id={items.id}
+              image={items.image}
+              totalPrice={items.totalPrice}
+              price={items.price}
+              quantity={items.quantity}
+              total={items.totalPrice}
+            />
+          ))}
       </div>
     </div>
   );

@@ -89,6 +89,8 @@ const ClothStore = () => {
         justifyContent: "space-evenly",
         flexWrap: "wrap",
         alignItems: "center",
+        backgroundColor: "#ebebeb",
+        paddingBottom: "10rem",
       }}
     >
       {CLOTH_DATA.map((items) => (

@@ -83,6 +83,8 @@ const CosmeticStore = () => {
         justifyContent: "space-evenly",
         flexWrap: "wrap",
         alignItems: "center",
+        backgroundColor: "#ebebeb",
+        paddingBottom: "10rem",
       }}
     >
       {COSMETICS_DATA.map((items) => (
