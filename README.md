@@ -1,1 +1,2 @@
-Do visit <a>amrtzshop.netlify.app</a> to view website
+Do visit the website:
+  [AmrtzShop](https://amrtzshop.netlify.app)
