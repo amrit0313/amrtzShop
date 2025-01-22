@@ -13,7 +13,7 @@ const Header = (props) => {
 
   return (
     <div className={auth.isLoggedIn ? classes.header : classes.headerbefore}>
-      <div className={classes.cover}>
+      <div className={auth.isLoggedIn ? classes.cover : classes.coverbefore}>
         <div className={classes.logoDiv}>
           <Link to="/">
             <img src={logo} alt="logo" />
@@ -41,7 +41,7 @@ const Header = (props) => {
               to="cosmetics"
               className={({ isActive }) => (isActive ? classes.active : "")}
             >
-              Skin/Hair
+              cosmetics
             </NavLink>
           )}
         </div>
