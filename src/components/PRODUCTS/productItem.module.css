@@ -1,96 +1,75 @@
 .maindiv {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  background-color: rgb(250, 250, 250);
-  position: relative;
-  top: 15vh;
   flex-direction: column;
-  box-shadow: -3px 3px 2px rgb(204, 204, 204);
-  margin: 35px;
-  padding: 20px;
+  gap: 14px;
+  background: linear-gradient(
+    160deg,
+    rgba(33, 36, 44, 0.95),
+    rgba(18, 20, 26, 0.95)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.maindiv:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
 .maindiv img {
-  border-radius: 1px;
-  height: 22rem;
-  aspect-ratio: 1/1;
+  border-radius: 14px;
+  width: 100%;
+  height: 260px;
   object-fit: cover;
 }
 
 .maindiv p {
-  font-size: x-large;
-  font-weight: bolder;
-  color: black;
-  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin: 0;
 }
 
 .options {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 10px auto;
+  gap: 12px;
 }
 
 .cart {
-  background-color: black;
-  color: white;
-  font-size: larger;
-  font-weight: bold;
-  padding: 12px 23px;
-  border: 1px solid gray;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  color: #0b0d10;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.35);
 }
 
 .cart:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-.cart:active {
-  background-color: white;
-  transform: scale(1.1);
-  color: black;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 990px) {
-  .maindiv {
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: -3px 3px 2px rgb(224, 224, 224);
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-    position: relative;
-    top: 15vh;
-  }
   .maindiv img {
-    border-radius: 10px;
-    height: 10rem;
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    height: 200px;
+  }
+  .maindiv p {
+    font-size: 1rem;
   }
   .cart {
-    background-color: black;
-    color: white;
-    font-size: smaller;
-    font-weight: lighter;
-    padding: 5px 10px;
-    border: 1px solid gray;
-  }
-
-  .cart:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-  .cart:active {
-    background-color: white;
-    color: black;
-  }
-
-  .maindiv p {
-    font-size: small;
-    font-weight: lighter;
-    color: black;
+    font-size: 0.75rem;
+    padding: 8px 14px;
   }
 }

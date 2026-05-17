@@ -77,16 +77,7 @@ const COSMETICS_DATA = [
 
 const CosmeticStore = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        alignItems: "center",
-        backgroundColor: "#ebebeb",
-        paddingBottom: "10rem",
-      }}
-    >
+    <div className="storeGrid">
       {COSMETICS_DATA.map((items) => (
         <ProductItems
           key={items.id}

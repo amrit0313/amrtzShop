@@ -2,7 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import classes from "./header.module.css";
 import { useSelector } from "react-redux";
 import cartIcon from "../../cart.svg";
-import logo from "../../loGo.png";
+import logo from '../assets/loGo.png'
 // import { LiaUserSolid } from "react-icons/lia";
 
 const Header = (props) => {

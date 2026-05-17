@@ -1,111 +1,128 @@
-.header {
+.header,
+.headerbefore {
   display: flex;
-  background-color: white;
   align-items: center;
-  justify-content: space-around;
-  object-fit: fill;
-  overflow: hidden;
-  height: 15vh;
+  justify-content: space-between;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2;
-  box-shadow: 0px 1px 2px rgb(250, 250, 250);
-}
-.headerbefore {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  height: 12vh;
-  width: 100%;
-  position: fixed;
-  padding: 0rem 2.5rem;
-  padding-top: 2rem;
-  z-index: 2;
+  z-index: 4;
+  padding: 18px 5vw;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 14, 18, 0.98),
+    rgba(19, 22, 28, 0.9)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 .cover,
 .coverbefore {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%;
+  gap: 32px;
+  width: 65%;
 }
 .logoDiv img {
-  height: 5rem;
-  width: 5rem;
-  margin-bottom: 5px;
+  height: 3.2rem;
+  width: 3.2rem;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
 }
 
 .cover a {
-  margin: 10px;
-  color: rgb(92, 92, 92);
+  margin: 0;
+  color: #d1d5db;
   text-decoration: none;
-  font-size: x-large;
-  font-weight: light;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 .links a {
-  padding: 10px 25px;
-  margin: auto 15px;
-  width: fit-content;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
 }
 
 .links a:hover {
-  color: rgb(65, 4, 4);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
 }
 .links a.active {
-  border-bottom: 1px solid black;
-  box-shadow: 0px 6px 6px -6px black;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.16);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.2);
 }
 
 .cartButton {
-  border: 0px;
-  font-weight: bolder;
-  font-size: large;
+  border: 0;
+  font-weight: 700;
+  font-size: 1rem;
   text-align: center;
   cursor: pointer;
-  margin: 20px 5px;
-  background: transparent;
+  margin: 0 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 10px 14px;
+  border-radius: 12px;
   position: relative;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 .quantity {
   position: absolute;
-  top: -10px;
-  right: 11px;
-  color: orangered;
-  font-weight: 1000;
-  font-size: small;
+  top: -6px;
+  right: -2px;
+  color: #0b0d10;
+  background: #fbbf24;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
   z-index: 20;
 }
 .cartButton img {
-  width: 3rem;
-  height: 3rem;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .buttonDiv {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 .logout {
-  margin: auto;
-  background-color: white;
-  font-size: large;
-  border: 0px;
+  margin: 0;
+  background: transparent;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f9fafb;
   cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .header button:hover {
-  transform: scale(1.01);
+  transform: translateY(-1px);
 }
 .login {
-  background-color: white;
-  margin: auto;
-  color: black;
-  font-weight: bolder;
-  font-family: "Courier New", Courier, monospace;
-  border: 0px;
-  font-size: larger;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  margin: 0;
+  color: #0b0d10;
+  font-weight: 700;
+  border: 0;
+  font-size: 0.95rem;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
 }
 .login img {
   height: 3rem;
@@ -113,79 +130,32 @@
 }
 
 .login:hover {
-  color: green;
+  color: #0b0d10;
 }
-@keyframes slideRight {
-  0% {
-    transform: translatey(-100%);
-    opacity: 0.1;
-  }
-  100% {
-    transform: translatey(0%);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 900px) {
+  .header,
   .headerbefore {
-    display: flex;
-    justify-content: space-around;
-    height: 12vh;
-    padding: 0rem 1.5rem;
+    padding: 14px 5vw;
   }
-  .header {
-    display: flex;
-    justify-content: space-around;
-    height: 15vh;
-  }
-  .logoDiv {
-    display: flex;
+  .cover,
+  .coverbefore {
+    width: auto;
+    gap: 16px;
   }
   .logoDiv img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
-  .coverbefore {
-    height: min-content;
-    margin-top: 1rem;
-  }
-  .cover {
-    display: block;
-    width: min-content;
-    height: 10px;
-    position: relative;
-    top: -50px;
-    padding: 10px 0;
-  }
-
-  .links {
-    display: flex;
-  }
-
   .links a {
-    margin: auto 5px;
-    font-size: large;
-    font-weight: lighter;
-    padding: 0px 3px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
-
-  .login {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    margin: 20px auto;
-    color: black;
-    border: 0px;
-    border-radius: 20px;
-    font-size: larger;
-    cursor: pointer;
-  }
-
-  .login img {
-    height: 2rem;
-    width: 2rem;
-  }
+  .login,
   .logout {
-    font-size: medium;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+  .cartButton {
+    padding: 8px 10px;
   }
 }

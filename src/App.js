@@ -57,7 +57,7 @@ function App() {
       )}
       <Header showModal={toggleModal} onLogin={toggleModal} />
       <Routes>
-        <Route path="" element={<Home />} />
+        <Route path="" element={<Home onLoginRequest={toggleModal} />} />
         {auth.isLoggedIn && <Route path="clothes" element={<ClothStore />} />}
         {auth.isLoggedIn && <Route path="shoes" element={<ShoesStore />} />}
         {auth.isLoggedIn && (

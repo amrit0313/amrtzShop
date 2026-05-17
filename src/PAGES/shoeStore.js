@@ -77,16 +77,7 @@ const SHOES_DATA = [
 
 const ShoesStore = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        alignItems: "center",
-        backgroundColor: "#ebebeb",
-        paddingBottom: "10rem",
-      }}
-    >
+    <div className="storeGrid">
       {SHOES_DATA.map((items) => (
         <ProductItems
           id={items.id}
